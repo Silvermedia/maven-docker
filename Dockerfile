@@ -8,7 +8,7 @@ RUN chmod +x /usr/local/bin/dockerize
 ENV USERNAME=maven
 
 RUN groupadd docker
-RUN useradd -G docker ${USERNAME}
+RUN useradd -m -G docker ${USERNAME}
 
 COPY fix-user-id.sh /
 RUN chmod +x /fix-user-id.sh

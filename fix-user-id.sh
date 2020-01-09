@@ -3,6 +3,8 @@
 NEW_UID="$(stat -c%u $(pwd))"
 NEW_GID="$(stat -c%g $(pwd))"
 
+chown maven:maven /home/maven
+
 if [ "$(id -u maven)" != "$NEW_UID" ]; then
   usermod -o -u "$NEW_UID" maven
 fi
