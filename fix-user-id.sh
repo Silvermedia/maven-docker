@@ -16,4 +16,4 @@ if [ -e /var/run/docker.sock ]; then
   groupmod -o -g $(stat -c%g /var/run/docker.sock) docker
 fi
 
-runuser -u maven -- $@
+runuser -u maven -- "$@"
