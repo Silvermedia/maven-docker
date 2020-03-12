@@ -3,6 +3,12 @@
 NEW_UID="$(stat -c%u $(pwd))"
 NEW_GID="$(stat -c%g $(pwd))"
 
+if [ $NEW_UID -eq 0 ]; then
+  echo "UID resolved to ROOT, skipped fixing GID and UID"
+  runuser -u maven -- "$@"
+  exit $?
+fi
+
 chown maven:maven /home/maven
 
 if [ "$(id -u maven)" != "$NEW_UID" ]; then
