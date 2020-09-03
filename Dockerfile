@@ -1,4 +1,4 @@
-FROM maven:3.6.2-jdk-11-slim
+FROM maven:3.6.3-jdk-11-slim
 
 ENV DOCKERIZE_VERSION=0.11.1
 
