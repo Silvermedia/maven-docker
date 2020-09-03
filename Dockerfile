@@ -13,6 +13,9 @@ RUN useradd -m -G docker ${USERNAME}
 COPY fix-user-id.sh /
 RUN chmod +x /fix-user-id.sh
 
+RUN apt-get update \
+    && apt-get install -y fontconfig libfreetype6
+
 ENTRYPOINT ["/fix-user-id.sh"]
 CMD ["mvn"]
 
