@@ -1,4 +1,4 @@
-FROM maven:3.6.3-jdk-11-slim
+FROM maven:3.6.3-jdk-8
 ENV DOCKERIZE_VERSION=0.12.0 \
         USERNAME=maven
 ADD https://github.com/powerman/dockerize/releases/download/v${DOCKERIZE_VERSION}/dockerize-linux-x86_64 /usr/local/bin/dockerize
